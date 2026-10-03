@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚡ Equipe KR - Scripts de Roblox</title>
+<meta name="description" content="Os melhores scripts de Roblox Mobile da Equipe KR. Grátis, rápidos e feitos para você dominar os jogos!">
+
+<!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FF3232">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Equipe KR">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<style>
+:root{
+  --bg:#0A0A0F;--bg-card-1:#1A1A24;--bg-card-2:#141420;
+  --bg-header:rgba(10,10,15,0.95);--border:#2A2A3A;
+  --text:#FFF;--text-muted:#B0B0C0;--text-dim:#808090;
+  --red:#FF3232;--red-dark:#CC0000;--gold:#FFD700;
+  --blue:#00BFFF;--blue-dark:#0099CC;
+  --discord:#5865F2;--discord-dark:#4752C4;
+  --tag-bg:#2A2A3A;--tag-bg-hover:#3A3A4A;--fav:#FFD700;
+}
+body.light{--bg:#F0F0F5;--bg-card-1:#FFF;--bg-card-2:#F5F5FA;--bg-header:rgba(255,255,255,0.95);--border:#D0D0E0;--text:#0A0A0F;--text-muted:#505060;--red:#E02020;--gold:#D4A000;--blue:#0088CC;--tag-bg:#E0E0F0;--fav:#D4A000}
+body.purple{--bg:#0D0518;--bg-card-1:#1A0F2E;--bg-card-2:#14082A;--bg-header:rgba(13,5,24,0.95);--border:#3A2060;--text:#FFF;--text-muted:#C0A8E0;--red:#B040FF;--red-dark:#8020D0;--blue:#00E5FF;--tag-bg:#2A1548}
+body.matrix{--bg:#000A00;--bg-card-1:#0A1A0A;--bg-card-2:#051505;--bg-header:rgba(0,10,0,0.95);--border:#0A3A0A;--text:#00FF41;--text-muted:#00CC33;--red:#00FF41;--gold:#AAFF00;--blue:#00FFCC;--tag-bg:#0A2A0A}
+body.cyber{--bg:#000814;--bg-card-1:#001428;--bg-card-2:#000F1F;--bg-header:rgba(0,8,20,0.95);--border:#003366;--text:#00E5FF;--text-muted:#66CCFF;--red:#FF007A;--gold:#00E5FF;--blue:#00E5FF;--tag-bg:#001F3F}
+body.pink{--bg:#1A0510;--bg-card-1:#2A0A1A;--bg-card-2:#20051A;--bg-header:rgba(26,5,16,0.95);--border:#4A1535;--text:#FFF;--text-muted:#FFB0D0;--red:#FF1493;--gold:#FF69B4;--blue:#FFB6C1;--tag-bg:#3A1028}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background 0.4s,color 0.4s}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 20%,rgba(255,50,50,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,215,0,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+
+header{position:sticky;top:0;background:var(--bg-header);backdrop-filter:blur(10px);padding:15px 40px;border-bottom:3px solid var(--red);display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(255,50,50,0.3);flex-wrap:wrap;gap:10px;z-index:100}
+.logo{font-size:26px;font-weight:900;color:var(--red);text-shadow:0 0 20px var(--red);letter-spacing:2px;cursor:pointer;transition:all 0.3s}
+.logo:hover{transform:scale(1.05)}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+nav a{color:var(--text);text-decoration:none;font-weight:600;transition:all 0.3s;font-size:14px;padding:8px 12px;border-radius:8px}
+nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
+.delta-btn{background:var(--blue);color:#FFF!important;padding:8px 16px!important;border-radius:8px;font-weight:bold;font-size:13px}
+.discord-btn{background:var(--discord);color:#FFF!important;padding:8px 16px!important;border-radius:8px;font-weight:bold;font-size:13px}
+.header-controls{display:flex;gap:8px;align-items:center}
+.theme-picker{position:relative}
+.theme-toggle{background:var(--tag-bg);color:var(--text);border:2px solid var(--border);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:16px;transition:all 0.3s;display:inline-flex;align-items:center;gap:6px}
+.theme-toggle:hover{border-color:var(--gold)}
+.theme-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg-card-1);border:2px solid var(--border);border-radius:12px;padding:8px;display:none;flex-direction:column;gap:4px;min-width:180px;box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:200}
+.theme-menu.open{display:flex}
+.theme-menu button{background:transparent;color:var(--text);border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;text-align:left;transition:all 0.2s;display:flex;align-items:center;gap:10px}
+.theme-menu button:hover{background:var(--tag-bg-hover)}
+.theme-menu button.active{background:var(--red);color:#FFF}
+.theme-swatch{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.3)}
+
+.hero{text-align:center;padding:70px 20px;background:radial-gradient(circle at center,rgba(255,50,50,0.2) 0%,transparent 70%);position:relative;z-index:1}
+.hero h1{font-size:56px;color:var(--red);text-shadow:0 0 30px var(--red);margin-bottom:15px;animation:pulse 2s infinite;letter-spacing:3px}
+@keyframes pulse{0%,100%{text-shadow:0 0 30px var(--red)}50%{text-shadow:0 0 50px var(--red),0 0 80px var(--red)}}
+.hero p{font-size:18px;color:var(--text-muted);max-width:650px;margin:0 auto 20px;line-height:1.6}
+.stats{display:flex;gap:30px;justify-content:center;margin:25px 0;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:36px;font-weight:900;color:var(--gold);text-shadow:0 0 20px rgba(255,215,0,0.5)}
+.stat-label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px}
+.hero-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.btn-delta{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#FFF;padding:15px 30px;border-radius:12px;font-weight:bold;font-size:15px;text-decoration:none;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px}
+.btn-delta:hover{transform:translateY(-3px)}
+.btn-discord{background:var(--discord);color:#FFF;padding:15px 30px;border-radius:12px;font-weight:bold;font-size:15px;text-decoration:none;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px}
+.btn-site{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;padding:15px 30px;border-radius:12px;font-weight:bold;font-size:15px;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
+.btn-site:hover{transform:translateY(-3px)}
+
+.delta-section{background:linear-gradient(135deg,#001F2E 0%,#003D5C 100%);border:2px solid var(--blue);border-radius:20px;padding:40px 30px;text-align:center;margin:40px auto;max-width:800px;position:relative;z-index:1}
+.delta-section h3{font-size:32px;margin-bottom:15px;color:var(--blue)}
+.delta-section p{color:#B0E0FF;margin-bottom:25px}
+.delta-steps{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:25px 0;text-align:left}
+.delta-step{background:rgba(0,191,255,0.1);padding:15px 20px;border-radius:10px;border-left:3px solid var(--blue);min-width:200px}
+.delta-step .num{color:var(--blue);font-weight:bold;font-size:14px}
+.delta-step .txt{color:#FFF;font-size:13px;margin-top:5px}
+
+.container{max-width:1200px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
+.section-title{font-size:36px;color:var(--red);margin-bottom:10px;text-align:center}
+.section-sub{text-align:center;color:var(--text-dim);margin-bottom:25px;font-size:14px}
+
+.search-bar{max-width:600px;margin:0 auto 20px;position:relative}
+.search-bar input{width:100%;padding:16px 50px 16px 20px;border-radius:12px;border:2px solid var(--border);background:var(--bg-card-1);color:var(--text);font-size:15px;outline:none;transition:all 0.3s}
+.search-bar input:focus{border-color:var(--red)}
+.search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
+.search-clear{position:absolute;right:45px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;display:none}
+.search-clear.visible{display:block}
+
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 25px}
+.filter-btn{background:var(--tag-bg);color:var(--text);border:2px solid var(--border);padding:8px 16px;border-radius:20px;font-weight:600;font-size:13px;cursor:pointer;transition:all 0.3s;display:inline-flex;align-items:center;gap:6px}
+.filter-btn.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;border-color:var(--red)}
+.filter-btn .filter-count{background:rgba(0,0,0,0.3);padding:2px 7px;border-radius:10px;font-size:11px}
+.search-info{text-align:center;color:var(--text-dim);font-size:13px;margin-bottom:25px;min-height:18px}
+
+.scripts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:25px}
+.script-card{background:linear-gradient(135deg,var(--bg-card-1) 0%,var(--bg-card-2) 100%);border:2px solid var(--border);border-radius:15px;padding:25px;transition:all 0.4s;position:relative;overflow:hidden}
+.script-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.script-card:hover{border-color:var(--red);transform:translateY(-10px);box-shadow:0 20px 60px rgba(255,50,50,0.5)}
+.script-card.hidden{display:none}
+.badge-new{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#00FF88,#00CC66);color:#003322;padding:4px 10px;border-radius:12px;font-size:10px;font-weight:900;z-index:3}
+.fav-btn{position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.4);border:2px solid rgba(255,255,255,0.2);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.3s;z-index:3;color:#FFF;padding:0}
+.fav-btn.active{background:var(--fav);border-color:var(--fav);color:#000}
+.script-icon{font-size:52px;margin-bottom:15px;display:block;position:relative;z-index:1}
+.script-name{font-size:22px;color:var(--text);margin-bottom:10px;font-weight:700;position:relative;z-index:1}
+.script-desc{color:var(--text-muted);font-size:14px;margin-bottom:15px;line-height:1.5;min-height:60px;position:relative;z-index:1}
+.script-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;position:relative;z-index:1}
+.tag{background:var(--tag-bg);color:var(--gold);padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600}
+.copy-counter{display:inline-flex;align-items:center;gap:5px;background:rgba(0,191,255,0.15);color:var(--blue);padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:12px;position:relative;z-index:1}
+.copy-counter .count{color:var(--gold);font-weight:900}
+.script-btn{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;border:none;padding:14px 20px;border-radius:10px;font-weight:bold;cursor:pointer;width:100%;font-size:14px;transition:all 0.3s;position:relative;z-index:1}
+.script-btn:hover{transform:scale(1.05)}
+.script-btn.copied{background:linear-gradient(135deg,#00C853,#009624)}
+
+.no-results{text-align:center;padding:60px 20px;color:var(--text-dim);display:none}
+.no-results.visible{display:block}
+.no-results .icon{font-size:64px;margin-bottom:15px;opacity:0.5}
+.no-results h3{font-size:22px;color:var(--text);margin-bottom:8px}
+
+.vip-cta{background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);border-radius:20px;padding:40px 30px;text-align:center;margin:60px auto;max-width:800px;position:relative;z-index:1}
+.vip-cta h3{font-size:32px;margin-bottom:10px;color:#0A0A0F;font-weight:900}
+.vip-cta p{color:#2A2A0F;margin-bottom:25px;font-weight:600}
+.vip-cta .btn-vip{background:#0A0A0F;color:var(--gold);padding:18px 45px;border-radius:12px;font-weight:bold;font-size:17px;text-decoration:none;display:inline-block;transition:all 0.3s}
+.vip-cta .btn-vip:hover{transform:scale(1.05)}
+.vip-features{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:25px 0}
+.vip-feature{background:rgba(10,10,15,0.2);padding:10px 15px;border-radius:10px;font-size:12px;font-weight:bold;color:#0A0A0F}
+
+.discord-cta{background:linear-gradient(135deg,var(--discord) 0%,var(--discord-dark) 100%);border-radius:20px;padding:40px 30px;text-align:center;margin:40px auto;max-width:700px;border:2px solid #7289DA;position:relative;z-index:1}
+.discord-cta h3{font-size:28px;margin-bottom:15px;color:#FFF}
+.discord-cta p{color:#E0E0FF;margin-bottom:25px}
+.discord-cta .btn-discord{background:#FFF;color:var(--discord);font-size:17px;padding:18px 40px}
+
+.disclaimer{background:rgba(255,50,50,0.08);border:2px solid var(--red);border-radius:15px;padding:25px 30px;margin:40px auto;max-width:900px;position:relative;z-index:1}
+.disclaimer h4{color:var(--red);font-size:18px;margin-bottom:12px}
+.disclaimer p{color:var(--text-muted);font-size:13px;line-height:1.7}
+.disclaimer p + p{margin-top:10px}
+
+footer{text-align:center;padding:50px 20px;color:var(--text-dim);border-top:2px solid var(--border);margin-top:60px;position:relative;z-index:1}
+footer .gold{color:var(--gold);font-weight:bold}
+footer a{color:var(--discord);text-decoration:none;font-weight:bold}
+
+.fav-toggle{position:fixed;bottom:25px;right:25px;background:linear-gradient(135deg,var(--gold),#FFA500);color:#000;border:none;width:60px;height:60px;border-radius:50%;cursor:pointer;font-size:26px;box-shadow:0 8px 30px rgba(255,215,0,0.5);transition:all 0.3s;z-index:150;display:flex;align-items:center;justify-content:center;padding:0}
+.fav-toggle.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF}
+.fav-toggle .fav-count{position:absolute;top:-5px;right:-5px;background:var(--red);color:#FFF;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid var(--bg)}
+
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--bg-card-1);color:var(--text);border:2px solid var(--gold);padding:14px 24px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;transition:all 0.4s;z-index:300;pointer-events:none;max-width:90%}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.install-btn{position:fixed;bottom:100px;right:25px;background:linear-gradient(135deg,#00C853,#009624);color:#FFF;border:none;padding:14px 22px;border-radius:30px;font-weight:bold;font-size:14px;cursor:pointer;z-index:150;display:flex;align-items:center;gap:8px}
+.install-btn:hover{transform:scale(1.08)}
+
+@media(max-width:768px){
+  header{padding:15px 20px;flex-direction:column;gap:15px}
+  nav{justify-content:center;width:100%}
+  .theme-toggle .theme-label{display:none}
+  .hero h1{font-size:36px}
+  .hero p{font-size:15px}
+  .stat-num{font-size:28px}
+  .section-title{font-size:26px}
+  .scripts-grid{grid-template-columns:1fr}
+  .hero-buttons{flex-direction:column;align-items:center}
+  .hero-buttons a,.hero-buttons button{width:100%;max-width:320px;justify-content:center}
+  .delta-section,.vip-cta,.discord-cta,.disclaimer{margin-left:15px;margin-right:15px;padding:25px 20px}
+  .fav-toggle{width:52px;height:52px;font-size:22px;bottom:20px;right:20px}
+  .install-btn{bottom:85px;right:20px;font-size:13px;padding:12px 18px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">⚡ EQUIPE <span>KR</span> ⚡</div>
+<nav>
+<a href="#scripts">📦 Scripts</a>
+<a href="#vip">💎 VIP</a>
+<a href="https://deltaexploits.gg" target="_blank" rel="noopener noreferrer" class="delta-btn">📥 DELTA</a>
+<a href="https://discord.gg/x7hDZURNwV" target="_blank" rel="noopener noreferrer" class="discord-btn">💬 Discord</a>
+</nav>
+<div class="header-controls">
+<div class="theme-picker">
+<button class="theme-toggle" onclick="toggleThemeMenu(event)" title="Trocar tema">
+<span id="themeIcon">🌙</span>
+<span class="theme-label" id="themeLabel">Escuro</span>
+</button>
+<div class="theme-menu" id="themeMenu">
+<button onclick="setTheme('dark', this)"><span class="theme-swatch" style="background:#0A0A0F"></span> 🌙 Escuro</button>
+<button onclick="setTheme('light', this)"><span class="theme-swatch" style="background:#F0F0F5"></span> ☀️ Claro</button>
+<button onclick="setTheme('purple', this)"><span class="theme-swatch" style="background:#B040FF"></span> 💜 Roxo Neon</button>
+<button onclick="setTheme('matrix', this)"><span class="theme-swatch" style="background:#00FF41"></span> 💚 Verde Matrix</button>
+<button onclick="setTheme('cyber', this)"><span class="theme-swatch" style="background:#00E5FF"></span> 💙 Azul Cyberpunk</button>
+<button onclick="setTheme('pink', this)"><span class="theme-swatch" style="background:#FF1493"></span> 🌸 Rosa Neon</button>
+</div>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h1>🔥 EQUIPE KR 🔥</h1>
+<p>Os melhores scripts de Roblox Mobile. Feitos com carinho pra você dominar os jogos!</p>
+<div class="stats">
+<div class="stat"><div class="stat-num" id="statScripts">6</div><div class="stat-label">Scripts</div></div>
+<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Grátis</div></div>
+<div class="stat"><div class="stat-num">⚡</div><div class="stat-label">Mobile</div></div>
+</div>
+<div class="hero-buttons">
+<a href="https://deltaexploits.gg" target="_blank" rel="noopener noreferrer" class="btn-delta">📥 BAIXAR DELTA</a>
+<a href="https://discord.gg/x7hDZURNwV" target="_blank" rel="noopener noreferrer" class="btn-discord">💬 DISCORD</a>
+<button class="btn-site" onclick="document.getElementById('scripts').scrollIntoView({behavior:'smooth'})">📦 SCRIPTS</button>
+</div>
+</section>
+
+<div class="container">
+<div class="delta-section">
+<h3>📥 BAIXE O DELTA EXECUTOR</h3>
+<p>Pra usar os scripts, você precisa do <strong>Delta Executor</strong> — o melhor executor mobile grátis!</p>
+<div class="delta-steps">
+<div class="delta-step"><div class="num">1️⃣</div><div class="txt">Clica no botão abaixo</div></div>
+<div class="delta-step"><div class="num">2️⃣</div><div class="txt">Baixa o Delta</div></div>
+<div class="delta-step"><div class="num">3️⃣</div><div class="txt">Instala no celular</div></div>
+<div class="delta-step"><div class="num">4️⃣</div><div class="txt">Cola o loadstring</div></div>
+</div>
+<a href="https://deltaexploits.gg" target="_blank" rel="noopener noreferrer" class="btn-delta">📥 BAIXAR DELTA EXECUTOR</a>
+</div>
+</div>
+
+<div class="container" id="scripts">
+<h2 class="section-title">📦 Nossos Scripts</h2>
+<p class="section-sub">Clique em "COPIAR LOADSTRING" e cole no Delta</p>
+
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="🔍 Buscar script por nome, jogo ou tag..." oninput="aplicarFiltros()" autocomplete="off">
+<button class="search-clear" id="searchClear" onclick="limparBusca()">✕</button>
+<span class="search-icon">🔍</span>
+</div>
+
+<div class="filters" id="filters"></div>
+<div class="search-info" id="searchInfo"></div>
+
+<div class="scripts-grid" id="scriptsGrid">
+
+<div class="script-card" data-script-id="mm2" data-categoria="mm2" data-date="2025-06-01" data-tags="mm2 murder mystery silent aim esp kill aura aimlock">
+<span class="script-icon">🔪</span>
+<div class="script-name">KR MM2 HUB</div>
+<div class="copy-counter">👁️ <span class="count" data-count="mm2">0</span> cópias</div>
+<div class="script-desc">Silent Aim, ESP, Auto Get Gun, Kill Aura, Aimlock e muito mais pro Murder Mystery 2!</div>
+<div class="script-tags"><span class="tag">MM2</span><span class="tag">Silent Aim</span><span class="tag">ESP</span></div>
+<button class="script-btn" onclick="copiar('https://pastefy.app/99rCVWry/raw', this, 'mm2')">📥 COPIAR LOADSTRING</button>
+</div>
+
+<div class="script-card" data-script-id="capivara" data-categoria="tcs" data-date="2025-05-20" data-tags="tcs futebol capivara auto follow hambolo gk tot curva dive reach">
+<span class="script-icon">🐹</span>
+<div class="script-name">KR CAPIVARA HUB</div>
+<div class="copy-counter">👁️ <span class="count" data-count="capivara">0</span> cópias</div>
+<div class="script-desc">18 funções completas: Auto Follow, Hambolo, GK, TOT, Curva, Auto Dive, Reach e mais!</div>
+<div class="script-tags"><span class="tag">TCS</span><span class="tag">Futebol</span><span class="tag">18 Funções</span></div>
+<button class="script-btn" onclick="copiar('https://gist.githubusercontent.com/costamauriceia686-cloud/76b37a00e5169e7b8d18ba308fb49fdc/raw/b5d830a44f3573b3b3e965ccbc6719dc64516e33/gistfile1.txt', this, 'capivara')">📥 COPIAR LOADSTRING</button>
+</div>
+
+<div class="script-card" data-script-id="soccer" data-categoria="tcs" data-date="2025-05-10" data-tags="tcs futebol soccer auto follow reach chute">
+<span class="script-icon">⚽</span>
+<div class="script-name">KR SOCCER HUB</div>
+<div class="copy-counter">👁️ <span class="count" data-count="soccer">0</span> cópias</div>
+<div class="script-desc">Auto Follow, Reach, Chute Automático, Cor da Bola, Fogo, Gramado, ESP. Com sistema de Key!</div>
+<div class="script-tags"><span class="tag">TCS</span><span class="tag">Key</span><span class="tag">Futebol</span></div>
+<button class="script-btn" onclick="copiar('https://pastefy.app/r9378rD9/raw', this, 'soccer')">📥 COPIAR LOADSTRING</button>
+</div>
+
+<div class="script-card" data-script-id="flick" data-categoria="fps" data-date="2025-04-15" data-tags="flick aimbot headshot esp fov">
+<span class="script-icon">🔫</span>
+<div class="script-name">KR FLICK HUB</div>
+<div class="copy-counter">👁️ <span class="count" data-count="flick">0</span> cópias</div>
+<div class="script-desc">Aimbot na cabeça, Priority Target, ESP completo, FOV Circle customizável e Speed Hack.</div>
+<div class="script-tags"><span class="tag">Flick</span><span class="tag">Aimbot</span><span class="tag">Headshot</span></div>
+<button class="script-btn" onclick="copiar('https://pastefy.app/dPiMHq2s/raw', this, 'flick')">📥 COPIAR LOADSTRING</button>
+</div>
+
+<div class="script-card" data-script-id="painel" data-categoria="fps" data-date="2025-03-01" data-tags="fps universal arsenal aimbot">
+<span class="script-icon">🎯</span>
+<div class="script-name">KR PAINEL v3</div>
+<div class="copy-counter">👁️ <span class="count" data-count="painel">0</span> cópias</div>
+<div class="script-desc">Aimbot Smooth, Trigger Bot, Auto Shoot, Camera Lock, ESP completo, ESP Line e Speed.</div>
+<div class="script-tags"><span class="tag">FPS</span><span class="tag">Universal</span><span class="tag">Arsenal</span></div>
+<button class="script-btn" onclick="copiar('https://pastebin.com/raw/T7WL8MwN', this, 'painel')">📥 COPIAR LOADSTRING</button>
+</div>
+
+<div class="script-card" data-script-id="hubv2" data-categoria="tcs" data-date="2025-02-01" data-tags="tcs futebol reach esfera">
+<span class="script-icon">🔥</span>
+<div class="script-name">KR HUB v2</div>
+<div class="copy-counter">👁️ <span class="count" data-count="hubv2">0</span> cópias</div>
+<div class="script-desc">Auto Follow, Reach com Esfera, Auto Touch, Cor da Bola, Fogo, Gramado e Anti-Lag.</div>
+<div class="script-tags"><span class="tag">TCS</span><span class="tag">Reach</span><span class="tag">Esfera</span></div>
+<button class="script-btn" onclick="copiar('https://pastefy.app/SEU_LINK_AQUI/raw', this, 'hubv2')">📥 COPIAR LOADSTRING</button>
+</div>
+
+</div>
+
+<div class="no-results" id="noResults">
+<div class="icon">🔍</div>
+<h3>Nenhum script encontrado</h3>
+<p>Tenta buscar por outro nome, jogo ou tag</p>
+</div>
+</div>
+
+<div class="container">
+<div class="disclaimer">
+<h4>⚠️ AVISO IMPORTANTE</h4>
+<p>Os scripts disponibilizados nesta página são de <strong>uso educacional e recreativo</strong>. O uso de exploits/cheats em jogos como Roblox <strong>viola os Termos de Serviço</strong> da plataforma e pode resultar em <strong>banimento permanente da sua conta</strong>.</p>
+<p>A <strong>Equipe KR</strong> não se responsabiliza por qualquer penalidade aplicada à sua conta, perda de itens, dados ou prejuízos decorrentes do uso destes scripts. Use por sua conta e risco.</p>
+<p>Se você é menor de idade, <strong>peça permissão aos seus responsáveis</strong> antes de baixar ou usar qualquer um destes arquivos.</p>
+</div>
+</div>
+
+<div class="container" id="vip">
+<div class="vip-cta">
+<h3>💎 KR HUB MASTER VIP</h3>
+<p>6 scripts em 1 painel + suporte prioritário!</p>
+<div class="vip-features">
+<span class="vip-feature">✅ 6 em 1</span>
+<span class="vip-feature">✅ Vitalício</span>
+<span class="vip-feature">✅ Suporte VIP</span>
+</div>
+<p style="font-size:24px;font-weight:900;color:#0A0A0F">A partir de R$ 10</p>
+<a href="https://discord.gg/x7hDZURNwV" target="_blank" rel="noopener noreferrer" class="btn-vip">💎 COMPRAR NO DISCORD</a>
+</div>
+</div>
+
+<div class="container">
+<div class="discord-cta">
+<h3>💬 ENTRE NO NOSSO DISCORD!</h3>
+<p>Junte-se à comunidade da <strong>Equipe KR</strong>. Tire dúvidas, peça ajuda, receba novidades e participe de sorteios!</p>
+<a href="https://discord.gg/x7hDZURNwV" target="_blank" rel="noopener noreferrer" class="btn-discord">🚀 ENTRAR NO DISCORD</a>
+</div>
+</div>
+
+<footer>
+<p>⚡ <span class="gold">EQUIPE KR</span> ⚡</p>
+<p style="margin-top:10px;font-size:14px">Scripts de Roblox Mobile — Feitos com ❤️</p>
+<p style="margin-top:15px">💬 <a href="https://discord.gg/x7hDZURNwV" target="_blank" rel="noopener noreferrer">Entrar no Discord</a></p>
+<p style="margin-top:20px;font-size:12px;color:#505060">© 2025 Equipe KR. Todos os direitos reservados.</p>
+</footer>
+
+<button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()" title="Mostrar só favoritos">
+⭐<span class="fav-count" id="favCount">0</span>
+</button>
+
+<button class="install-btn" id="installBtn" onclick="instalarPWA()" style="display:none">
+📲 INSTALAR APP
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var THEMES = {
+  dark:{icon:'🌙', label:'Escuro', class:''},
+  light:{icon:'☀️', label:'Claro', class:'light'},
+  purple:{icon:'💜', label:'Roxo', class:'purple'},
+  matrix:{icon:'💚', label:'Matrix', class:'matrix'},
+  cyber:{icon:'💙', label:'Cyber', class:'cyber'},
+  pink:{icon:'🌸', label:'Rosa', class:'pink'}
+};
+
+function setTheme(theme, btn){
+  Object.values(THEMES).forEach(function(t){ if(t.class) document.body.classList.remove(t.class); });
+  if(THEMES[theme].class) document.body.classList.add(THEMES[theme].class);
+  document.getElementById('themeIcon').textContent = THEMES[theme].icon;
+  document.getElementById('themeLabel').textContent = THEMES[theme].label;
+  document.querySelectorAll('#themeMenu button').forEach(function(b){ b.classList.remove('active'); });
+  if(btn) btn.classList.add('active');
+  localStorage.setItem('kr-theme', theme);
+  document.getElementById('themeMenu').classList.remove('open');
+}
+
+function toggleThemeMenu(e){ e.stopPropagation(); document.getElementById('themeMenu').classList.toggle('open'); }
+
+document.addEventListener('click', function(e){
+  var menu = document.getElementById('themeMenu');
+  if(menu && !menu.contains(e.target) && !e.target.closest('.theme-toggle')) menu.classList.remove('open');
+});
+
+(function(){ var saved = localStorage.getItem('kr-theme') || 'dark'; if(THEMES[saved]) setTheme(saved); })();
+
+function getCounters(){ try{ return JSON.parse(localStorage.getItem('kr-counters') || '{}'); }catch(e){ return {}; } }
+function saveCounters(c){ localStorage.setItem('kr-counters', JSON.stringify(c)); }
+function updateCounterUI(id){
+  var c = getCounters();
+  document.querySelectorAll('[data-count="'+id+'"]').forEach(function(el){ el.textContent = c[id] || 0; });
+}
+function incrementarContador(id){
+  var c = getCounters();
+  c[id] = (c[id] || 0) + 1;
+  saveCounters(c);
+  updateCounterUI(id);
+}
+document.querySelectorAll('.script-card').forEach(function(card){ var id = card.dataset.scriptId; if(id) updateCounterUI(id); });
+
+function getFavoritos(){ try{ return JSON.parse(localStorage.getItem('kr-favs') || '[]'); }catch(e){ return []; } }
+function saveFavoritos(f){ localStorage.setItem('kr-favs', JSON.stringify(f)); }
+function isFavorito(id){ return getFavoritos().indexOf(id) > -1; }
+function toggleFavorito(id, btn){
+  var favs = getFavoritos();
+  var idx = favs.indexOf(id);
+  if(idx > -1){ favs.splice(idx, 1); btn.classList.remove('active'); btn.innerHTML = '🤍'; mostrarToast('💔 Removido dos favoritos'); }
+  else { favs.push(id); btn.classList.add('active'); btn.innerHTML = '⭐'; mostrarToast('⭐ Adicionado aos favoritos!'); }
+  saveFavoritos(favs);
+  atualizarContadorFavs();
+  aplicarFiltros();
+}
+function atualizarContadorFavs(){ document.getElementById('favCount').textContent = getFavoritos().length; }
+function toggleFavFilter(){
+  document.body.classList.toggle('show-favs');
+  document.getElementById('favToggle').classList.toggle('active');
+  aplicarFiltros();
+}
+
+document.querySelectorAll('.script-card').forEach(function(card){
+  var id = card.dataset.scriptId;
+  if(!id) return;
+  var favBtn = document.createElement('button');
+  favBtn.className = 'fav-btn';
+  favBtn.innerHTML = isFavorito(id) ? '⭐' : '🤍';
+  if(isFavorito(id)) favBtn.classList.add('active');
+  favBtn.onclick = function(e){ e.stopPropagation(); toggleFavorito(id, favBtn); };
+  card.appendChild(favBtn);
+
+  var dateStr = card.dataset.date;
+  if(dateStr){
+    var dias = (new Date() - new Date(dateStr)) / (1000 * 60 * 60 * 24);
+    if(dias <= 30 && dias >= 0){
+      var badge = document.createElement('div');
+      badge.className = 'badge-new';
+      badge.textContent = '🆕 NOVO';
+      card.appendChild(badge);
+    }
+  }
+});
+atualizarContadorFavs();
+
+var CATEGORIAS = { todos:{label:'📦 Todos'}, mm2:{label:'🔪 MM2'}, tcs:{label:'⚽ TCS'}, fps:{label:'🔫 FPS'} };
+var categoriaAtual = 'todos';
+
+function montarFiltros(){
+  var container = document.getElementById('filters');
+  container.innerHTML = '';
+  Object.keys(CATEGORIAS).forEach(function(cat){
+    var count = cat === 'todos' ? document.querySelectorAll('.script-card').length : document.querySelectorAll('.script-card[data-categoria="'+cat+'"]').length;
+    if(count === 0 && cat !== 'todos') return;
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === categoriaAtual ? ' active' : '');
+    btn.innerHTML = CATEGORIAS[cat].label + ' <span class="filter-count">' + count + '</span>';
+    btn.onclick = function(){
+      categoriaAtual = cat;
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      aplicarFiltros();
+    };
+    container.appendChild(btn);
+  });
+}
+montarFiltros();
+
+function aplicarFiltros(){
+  var termo = document.getElementById('searchInput').value.toLowerCase().trim();
+  var cards = document.querySelectorAll('.script-card');
+  var visiveis = 0;
+  var mostrarSoFavs = document.body.classList.contains('show-favs');
+  document.getElementById('searchClear').classList.toggle('visible', termo.length > 0);
+
+  cards.forEach(function(card){
+    var nome = card.querySelector('.script-name').textContent.toLowerCase();
+    var desc = card.querySelector('.script-desc').textContent.toLowerCase();
+    var tags = (card.dataset.tags || '').toLowerCase();
+    var cat = card.dataset.categoria || '';
+    var id = card.dataset.scriptId;
+    var matchTexto = termo === '' || nome.includes(termo) || desc.includes(termo) || tags.includes(termo);
+    var matchCat = categoriaAtual === 'todos' || cat === categoriaAtual;
+    var matchFav = !mostrarSoFavs || isFavorito(id);
+    if(matchTexto && matchCat && matchFav){ card.classList.remove('hidden'); visiveis++; }
+    else card.classList.add('hidden');
+  });
+
+  var noResults = document.getElementById('noResults');
+  var info = document.getElementById('searchInfo');
+  if(visiveis === 0){ noResults.classList.add('visible'); info.textContent = ''; }
+  else { noResults.classList.remove('visible'); info.textContent = visiveis + ' script' + (visiveis !== 1 ? 's' : '') + ' encontrado' + (visiveis !== 1 ? 's' : ''); }
+}
+
+function limparBusca(){
+  document.getElementById('searchInput').value = '';
+  aplicarFiltros();
+  document.getElementById('searchInput').focus();
+}
+
+function copiar(link, btn, scriptId){
+  if(link.includes('SEU_LINK_AQUI') || link.includes('COLA_O_LINK')){ mostrarToast('⚠️ Esse script ainda não tem link configurado!'); return; }
+  var loadstring = 'loadstring(game:HttpGet("' + link + '"))()';
+  navigator.clipboard.writeText(loadstring).then(function(){
+    if(scriptId) incrementarContador(scriptId);
+    if(btn){
+      var orig = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '✅ COPIADO!';
+      setTimeout(function(){ btn.classList.remove('copied'); btn.innerHTML = orig; }, 1800);
+    }
+    mostrarToast('✅ Loadstring copiado! Cola no Delta e executa.');
+  }).catch(function(){ prompt('Copie manualmente:', loadstring); });
+}
+
+var toastTimer;
+function mostrarToast(msg){
+  var toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2500);
+}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){ console.log('✅ Service Worker registrado:', reg.scope); })
+      .catch(function(err){ console.log('❌ Erro no SW:', err); });
+  });
+}
+
+var deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBtn').style.display = 'flex';
+});
+
+function instalarPWA(){
+  if(!deferredPrompt){ mostrarToast('💡 Use o menu do navegador → "Adicionar à tela inicial"'); return; }
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(function(choice){
+    if(choice.outcome === 'accepted') mostrarToast('✅ App instalado!');
+    deferredPrompt = null;
+    document.getElementById('installBtn').style.display = 'none';
+  });
+}
+
+window.addEventListener('appinstalled', function(){
+  document.getElementById('installBtn').style.display = 'none';
+  mostrarToast('🎉 App instalado com sucesso!');
+});
+
+if(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true){
+  document.getElementById('installBtn').style.display = 'none';
+}
+</script>
+</body>
+</html>
