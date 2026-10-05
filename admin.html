@@ -103,7 +103,7 @@ tbody td.name{color:var(--text);font-weight:600}
 </div>
 <script>
 var SENHA_ADMIN='kr2025';
-var NOMES_SCRIPTS={'mm2':'🔪 KR MM2 HUB','capivara':'🐹 KR CAPIVARA HUB','soccer':'⚽ KR SOCCER HUB','flick':'🔫 KR FLICK HUB','painel':'🎯 KR PAINEL v3','hubv2':'🔥 KR HUB v2','kxz':'🌌 KXZ HUB 🌌','kzplay':'🎵 KZPLAY v4'};
+var NOMES_SCRIPTS={'mm2':'🔪 KR MM2 HUB','capivara':'🐹 KR CAPIVARA HUB','soccer':'⚽ KR SOCCER HUB','flick':'🔫 KR FLICK HUB','painel':'🎯 KR PAINEL v3','kxz':'🌌 KXZ HUB 🌌','kzplay':'🎵 KZPLAY v4'};
 function fazerLogin(){var senha=document.getElementById('senhaInput').value;var err=document.getElementById('loginError');if(senha===SENHA_ADMIN){sessionStorage.setItem('kr-admin-auth','1');document.getElementById('loginScreen').style.display='none';document.getElementById('dashboard').classList.add('visible');carregarDashboard()}else{err.textContent='❌ Senha incorreta!';document.getElementById('senhaInput').value='';setTimeout(function(){err.textContent=''},2500)}}
 function sair(){sessionStorage.removeItem('kr-admin-auth');location.reload()}
 if(sessionStorage.getItem('kr-admin-auth')==='1'){document.getElementById('loginScreen').style.display='none';document.getElementById('dashboard').classList.add('visible');carregarDashboard()}
