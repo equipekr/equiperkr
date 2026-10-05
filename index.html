@@ -5,35 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>⚡ Equipe KR - Scripts de Roblox</title>
 <meta name="description" content="Os melhores scripts de Roblox Mobile da Equipe KR. Grátis, rápidos e feitos para você dominar os jogos!">
-
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#FF3232">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Equipe KR">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-
 <style>
-:root{
-  --bg:#0A0A0F;--bg-card-1:#1A1A24;--bg-card-2:#141420;
-  --bg-header:rgba(10,10,15,0.95);--border:#2A2A3A;
-  --text:#FFF;--text-muted:#B0B0C0;--text-dim:#808090;
-  --red:#FF3232;--red-dark:#CC0000;--gold:#FFD700;
-  --blue:#00BFFF;--blue-dark:#0099CC;
-  --discord:#5865F2;--discord-dark:#4752C4;
-  --tag-bg:#2A2A3A;--tag-bg-hover:#3A3A4A;--fav:#FFD700;
-}
+:root{--bg:#0A0A0F;--bg-card-1:#1A1A24;--bg-card-2:#141420;--bg-header:rgba(10,10,15,0.95);--border:#2A2A3A;--text:#FFF;--text-muted:#B0B0C0;--text-dim:#808090;--red:#FF3232;--red-dark:#CC0000;--gold:#FFD700;--blue:#00BFFF;--blue-dark:#0099CC;--discord:#5865F2;--discord-dark:#4752C4;--tag-bg:#2A2A3A;--tag-bg-hover:#3A3A4A;--fav:#FFD700}
 body.light{--bg:#F0F0F5;--bg-card-1:#FFF;--bg-card-2:#F5F5FA;--bg-header:rgba(255,255,255,0.95);--border:#D0D0E0;--text:#0A0A0F;--text-muted:#505060;--red:#E02020;--gold:#D4A000;--blue:#0088CC;--tag-bg:#E0E0F0;--fav:#D4A000}
 body.purple{--bg:#0D0518;--bg-card-1:#1A0F2E;--bg-card-2:#14082A;--bg-header:rgba(13,5,24,0.95);--border:#3A2060;--text:#FFF;--text-muted:#C0A8E0;--red:#B040FF;--red-dark:#8020D0;--blue:#00E5FF;--tag-bg:#2A1548}
 body.matrix{--bg:#000A00;--bg-card-1:#0A1A0A;--bg-card-2:#051505;--bg-header:rgba(0,10,0,0.95);--border:#0A3A0A;--text:#00FF41;--text-muted:#00CC33;--red:#00FF41;--gold:#AAFF00;--blue:#00FFCC;--tag-bg:#0A2A0A}
 body.cyber{--bg:#000814;--bg-card-1:#001428;--bg-card-2:#000F1F;--bg-header:rgba(0,8,20,0.95);--border:#003366;--text:#00E5FF;--text-muted:#66CCFF;--red:#FF007A;--gold:#00E5FF;--blue:#00E5FF;--tag-bg:#001F3F}
 body.pink{--bg:#1A0510;--bg-card-1:#2A0A1A;--bg-card-2:#20051A;--bg-header:rgba(26,5,16,0.95);--border:#4A1535;--text:#FFF;--text-muted:#FFB0D0;--red:#FF1493;--gold:#FF69B4;--blue:#FFB6C1;--tag-bg:#3A1028}
-
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background 0.4s,color 0.4s}
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 20%,rgba(255,50,50,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,215,0,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
-
 header{position:sticky;top:0;background:var(--bg-header);backdrop-filter:blur(10px);padding:15px 40px;border-bottom:3px solid var(--red);display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(255,50,50,0.3);flex-wrap:wrap;gap:10px;z-index:100}
 .logo{font-size:26px;font-weight:900;color:var(--red);text-shadow:0 0 20px var(--red);letter-spacing:2px;cursor:pointer;transition:all 0.3s}
 .logo:hover{transform:scale(1.05)}
@@ -53,7 +41,6 @@ nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
 .theme-menu button:hover{background:var(--tag-bg-hover)}
 .theme-menu button.active{background:var(--red);color:#FFF}
 .theme-swatch{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.3)}
-
 .hero{text-align:center;padding:70px 20px;background:radial-gradient(circle at center,rgba(255,50,50,0.2) 0%,transparent 70%);position:relative;z-index:1}
 .hero h1{font-size:56px;color:var(--red);text-shadow:0 0 30px var(--red);margin-bottom:15px;animation:pulse 2s infinite;letter-spacing:3px}
 @keyframes pulse{0%,100%{text-shadow:0 0 30px var(--red)}50%{text-shadow:0 0 50px var(--red),0 0 80px var(--red)}}
@@ -69,7 +56,6 @@ nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
 .btn-discord:hover{transform:translateY(-3px)}
 .btn-site{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;padding:15px 30px;border-radius:12px;font-weight:bold;font-size:15px;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
 .btn-site:hover{transform:translateY(-3px)}
-
 .delta-section{background:linear-gradient(135deg,#001F2E 0%,#003D5C 100%);border:2px solid var(--blue);border-radius:20px;padding:40px 30px;text-align:center;margin:40px auto;max-width:800px;position:relative;z-index:1}
 .delta-section h3{font-size:32px;margin-bottom:15px;color:var(--blue)}
 .delta-section p{color:#B0E0FF;margin-bottom:25px}
@@ -77,24 +63,20 @@ nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
 .delta-step{background:rgba(0,191,255,0.1);padding:15px 20px;border-radius:10px;border-left:3px solid var(--blue);min-width:200px}
 .delta-step .num{color:var(--blue);font-weight:bold;font-size:14px}
 .delta-step .txt{color:#FFF;font-size:13px;margin-top:5px}
-
 .container{max-width:1200px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
 .section-title{font-size:36px;color:var(--red);margin-bottom:10px;text-align:center}
 .section-sub{text-align:center;color:var(--text-dim);margin-bottom:25px;font-size:14px}
-
 .search-bar{max-width:600px;margin:0 auto 20px;position:relative}
 .search-bar input{width:100%;padding:16px 50px 16px 20px;border-radius:12px;border:2px solid var(--border);background:var(--bg-card-1);color:var(--text);font-size:15px;outline:none;transition:all 0.3s}
 .search-bar input:focus{border-color:var(--red)}
 .search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
 .search-clear{position:absolute;right:45px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;display:none}
 .search-clear.visible{display:block}
-
 .filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 25px}
 .filter-btn{background:var(--tag-bg);color:var(--text);border:2px solid var(--border);padding:8px 16px;border-radius:20px;font-weight:600;font-size:13px;cursor:pointer;transition:all 0.3s;display:inline-flex;align-items:center;gap:6px}
 .filter-btn.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;border-color:var(--red)}
 .filter-btn .filter-count{background:rgba(0,0,0,0.3);padding:2px 7px;border-radius:10px;font-size:11px}
 .search-info{text-align:center;color:var(--text-dim);font-size:13px;margin-bottom:25px;min-height:18px}
-
 .scripts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:25px}
 .script-card{background:linear-gradient(135deg,var(--bg-card-1) 0%,var(--bg-card-2) 100%);border:2px solid var(--border);border-radius:15px;padding:25px;transition:all 0.4s;position:relative;overflow:hidden}
 .script-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold))}
@@ -113,12 +95,10 @@ nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
 .script-btn{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF;border:none;padding:14px 20px;border-radius:10px;font-weight:bold;cursor:pointer;width:100%;font-size:14px;transition:all 0.3s;position:relative;z-index:1}
 .script-btn:hover{transform:scale(1.05)}
 .script-btn.copied{background:linear-gradient(135deg,#00C853,#009624)}
-
 .no-results{text-align:center;padding:60px 20px;color:var(--text-dim);display:none}
 .no-results.visible{display:block}
 .no-results .icon{font-size:64px;margin-bottom:15px;opacity:0.5}
 .no-results h3{font-size:22px;color:var(--text);margin-bottom:8px}
-
 .vip-cta{background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);border-radius:20px;padding:40px 30px;text-align:center;margin:60px auto;max-width:800px;position:relative;z-index:1}
 .vip-cta h3{font-size:32px;margin-bottom:10px;color:#0A0A0F;font-weight:900}
 .vip-cta p{color:#2A2A0F;margin-bottom:25px;font-weight:600}
@@ -126,31 +106,24 @@ nav a:hover{color:var(--red);background:rgba(255,50,50,0.1)}
 .vip-cta .btn-vip:hover{transform:scale(1.05)}
 .vip-features{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:25px 0}
 .vip-feature{background:rgba(10,10,15,0.2);padding:10px 15px;border-radius:10px;font-size:12px;font-weight:bold;color:#0A0A0F}
-
 .discord-cta{background:linear-gradient(135deg,var(--discord) 0%,var(--discord-dark) 100%);border-radius:20px;padding:40px 30px;text-align:center;margin:40px auto;max-width:700px;border:2px solid #7289DA;position:relative;z-index:1}
 .discord-cta h3{font-size:28px;margin-bottom:15px;color:#FFF}
 .discord-cta p{color:#E0E0FF;margin-bottom:25px}
 .discord-cta .btn-discord{background:#FFF;color:var(--discord);font-size:17px;padding:18px 40px}
-
 .disclaimer{background:rgba(255,50,50,0.08);border:2px solid var(--red);border-radius:15px;padding:25px 30px;margin:40px auto;max-width:900px;position:relative;z-index:1}
 .disclaimer h4{color:var(--red);font-size:18px;margin-bottom:12px}
 .disclaimer p{color:var(--text-muted);font-size:13px;line-height:1.7}
 .disclaimer p + p{margin-top:10px}
-
 footer{text-align:center;padding:50px 20px;color:var(--text-dim);border-top:2px solid var(--border);margin-top:60px;position:relative;z-index:1}
 footer .gold{color:var(--gold);font-weight:bold}
 footer a{color:var(--discord);text-decoration:none;font-weight:bold}
-
 .fav-toggle{position:fixed;bottom:25px;right:25px;background:linear-gradient(135deg,var(--gold),#FFA500);color:#000;border:none;width:60px;height:60px;border-radius:50%;cursor:pointer;font-size:26px;box-shadow:0 8px 30px rgba(255,215,0,0.5);transition:all 0.3s;z-index:150;display:flex;align-items:center;justify-content:center;padding:0}
 .fav-toggle.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#FFF}
 .fav-toggle .fav-count{position:absolute;top:-5px;right:-5px;background:var(--red);color:#FFF;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid var(--bg)}
-
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--bg-card-1);color:var(--text);border:2px solid var(--gold);padding:14px 24px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;transition:all 0.4s;z-index:300;pointer-events:none;max-width:90%}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 .install-btn{position:fixed;bottom:100px;right:25px;background:linear-gradient(135deg,#00C853,#009624);color:#FFF;border:none;padding:14px 22px;border-radius:30px;font-weight:bold;font-size:14px;cursor:pointer;z-index:150;display:flex;align-items:center;gap:8px}
 .install-btn:hover{transform:scale(1.08)}
-
 @media(max-width:768px){
   header{padding:15px 20px;flex-direction:column;gap:15px}
   nav{justify-content:center;width:100%}
@@ -228,16 +201,13 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <div class="container" id="scripts">
 <h2 class="section-title">📦 Nossos Scripts</h2>
 <p class="section-sub">Clique em "COPIAR LOADSTRING" e cole no Delta</p>
-
 <div class="search-bar">
 <input type="text" id="searchInput" placeholder="🔍 Buscar script por nome, jogo ou tag..." oninput="aplicarFiltros()" autocomplete="off">
 <button class="search-clear" id="searchClear" onclick="limparBusca()">✕</button>
 <span class="search-icon">🔍</span>
 </div>
-
 <div class="filters" id="filters"></div>
 <div class="search-info" id="searchInfo"></div>
-
 <div class="scripts-grid" id="scriptsGrid">
 
 <div class="script-card" data-script-id="mm2" data-categoria="mm2" data-date="2025-06-01" data-tags="mm2 murder mystery silent aim esp kill aura aimlock">
@@ -312,10 +282,7 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <button class="script-btn" onclick="copiar('https://gist.githubusercontent.com/equipekr/67163d7e59c0a0b696991bc70a372fbe/raw/kzplay-v4.lua', this, 'kzplay')">📥 COPIAR LOADSTRING</button>
 </div>
 
-<!-- 👆 ADICIONE MAIS SCRIPTS COPIANDO O BLOCO ACIMA 👆 -->
-
 </div>
-
 <div class="no-results" id="noResults">
 <div class="icon">🔍</div>
 <h3>Nenhum script encontrado</h3>
@@ -335,9 +302,9 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <div class="container" id="vip">
 <div class="vip-cta">
 <h3>💎 KR HUB MASTER VIP</h3>
-<p>7 scripts em 1 painel + suporte prioritário!</p>
+<p>8 scripts em 1 painel + suporte prioritário!</p>
 <div class="vip-features">
-<span class="vip-feature">✅ 7 em 1</span>
+<span class="vip-feature">✅ 8 em 1</span>
 <span class="vip-feature">✅ Vitalício</span>
 <span class="vip-feature">✅ Suporte VIP</span>
 </div>
@@ -361,221 +328,66 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <p style="margin-top:20px;font-size:12px;color:#505060">© 2025 Equipe KR. Todos os direitos reservados.</p>
 </footer>
 
-<button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()" title="Mostrar só favoritos">
-⭐<span class="fav-count" id="favCount">0</span>
-</button>
-
-<button class="install-btn" id="installBtn" onclick="instalarPWA()" style="display:none">
-📲 INSTALAR APP
-</button>
-
+<button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()" title="Mostrar só favoritos">⭐<span class="fav-count" id="favCount">0</span></button>
+<button class="install-btn" id="installBtn" onclick="instalarPWA()" style="display:none">📲 INSTALAR APP</button>
 <div class="toast" id="toast"></div>
 
 <script>
-var THEMES = {
-  dark:{icon:'🌙', label:'Escuro', class:''},
-  light:{icon:'☀️', label:'Claro', class:'light'},
-  purple:{icon:'💜', label:'Roxo', class:'purple'},
-  matrix:{icon:'💚', label:'Matrix', class:'matrix'},
-  cyber:{icon:'💙', label:'Cyber', class:'cyber'},
-  pink:{icon:'🌸', label:'Rosa', class:'pink'}
-};
+var THEMES={dark:{icon:'🌙',label:'Escuro',class:''},light:{icon:'☀️',label:'Claro',class:'light'},purple:{icon:'💜',label:'Roxo',class:'purple'},matrix:{icon:'💚',label:'Matrix',class:'matrix'},cyber:{icon:'💙',label:'Cyber',class:'cyber'},pink:{icon:'🌸',label:'Rosa',class:'pink'}};
+function setTheme(theme,btn){Object.values(THEMES).forEach(function(t){if(t.class)document.body.classList.remove(t.class)});if(THEMES[theme].class)document.body.classList.add(THEMES[theme].class);document.getElementById('themeIcon').textContent=THEMES[theme].icon;document.getElementById('themeLabel').textContent=THEMES[theme].label;document.querySelectorAll('#themeMenu button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active');localStorage.setItem('kr-theme',theme);document.getElementById('themeMenu').classList.remove('open')}
+function toggleThemeMenu(e){e.stopPropagation();document.getElementById('themeMenu').classList.toggle('open')}
+document.addEventListener('click',function(e){var menu=document.getElementById('themeMenu');if(menu&&!menu.contains(e.target)&&!e.target.closest('.theme-toggle'))menu.classList.remove('open')});
+(function(){var saved=localStorage.getItem('kr-theme')||'dark';if(THEMES[saved])setTheme(saved)})();
 
-function setTheme(theme, btn){
-  Object.values(THEMES).forEach(function(t){ if(t.class) document.body.classList.remove(t.class); });
-  if(THEMES[theme].class) document.body.classList.add(THEMES[theme].class);
-  document.getElementById('themeIcon').textContent = THEMES[theme].icon;
-  document.getElementById('themeLabel').textContent = THEMES[theme].label;
-  document.querySelectorAll('#themeMenu button').forEach(function(b){ b.classList.remove('active'); });
-  if(btn) btn.classList.add('active');
-  localStorage.setItem('kr-theme', theme);
-  document.getElementById('themeMenu').classList.remove('open');
-}
+function getCounters(){try{return JSON.parse(localStorage.getItem('kr-counters')||'{}')}catch(e){return{}}}
+function saveCounters(c){localStorage.setItem('kr-counters',JSON.stringify(c))}
+function updateCounterUI(id){var c=getCounters();document.querySelectorAll('[data-count="'+id+'"]').forEach(function(el){el.textContent=c[id]||0})}
+function incrementarContador(id){var c=getCounters();c[id]=(c[id]||0)+1;saveCounters(c);updateCounterUI(id)}
+document.querySelectorAll('.script-card').forEach(function(card){var id=card.dataset.scriptId;if(id)updateCounterUI(id)});
 
-function toggleThemeMenu(e){ e.stopPropagation(); document.getElementById('themeMenu').classList.toggle('open'); }
+// CONTADOR AUTOMÁTICO
+var totalScripts=document.querySelectorAll('.script-card').length;
+var statScriptsEl=document.getElementById('statScripts');
+if(statScriptsEl)statScriptsEl.textContent=totalScripts;
 
-document.addEventListener('click', function(e){
-  var menu = document.getElementById('themeMenu');
-  if(menu && !menu.contains(e.target) && !e.target.closest('.theme-toggle')) menu.classList.remove('open');
-});
-
-(function(){ var saved = localStorage.getItem('kr-theme') || 'dark'; if(THEMES[saved]) setTheme(saved); })();
-
-function getCounters(){ try{ return JSON.parse(localStorage.getItem('kr-counters') || '{}'); }catch(e){ return {}; } }
-function saveCounters(c){ localStorage.setItem('kr-counters', JSON.stringify(c)); }
-function updateCounterUI(id){
-  var c = getCounters();
-  document.querySelectorAll('[data-count="'+id+'"]').forEach(function(el){ el.textContent = c[id] || 0; });
-}
-function incrementarContador(id){
-  var c = getCounters();
-  c[id] = (c[id] || 0) + 1;
-  saveCounters(c);
-  updateCounterUI(id);
-}
-document.querySelectorAll('.script-card').forEach(function(card){ var id = card.dataset.scriptId; if(id) updateCounterUI(id); });
-
-// ============================================
-// CONTADOR AUTOMÁTICO DE SCRIPTS
-// ============================================
-var totalScripts = document.querySelectorAll('.script-card').length;
-var statScriptsEl = document.getElementById('statScripts');
-if(statScriptsEl) statScriptsEl.textContent = totalScripts;
-
-function getFavoritos(){ try{ return JSON.parse(localStorage.getItem('kr-favs') || '[]'); }catch(e){ return []; } }
-function saveFavoritos(f){ localStorage.setItem('kr-favs', JSON.stringify(f)); }
-function isFavorito(id){ return getFavoritos().indexOf(id) > -1; }
-function toggleFavorito(id, btn){
-  var favs = getFavoritos();
-  var idx = favs.indexOf(id);
-  if(idx > -1){ favs.splice(idx, 1); btn.classList.remove('active'); btn.innerHTML = '🤍'; mostrarToast('💔 Removido dos favoritos'); }
-  else { favs.push(id); btn.classList.add('active'); btn.innerHTML = '⭐'; mostrarToast('⭐ Adicionado aos favoritos!'); }
-  saveFavoritos(favs);
-  atualizarContadorFavs();
-  aplicarFiltros();
-}
-function atualizarContadorFavs(){ document.getElementById('favCount').textContent = getFavoritos().length; }
-function toggleFavFilter(){
-  document.body.classList.toggle('show-favs');
-  document.getElementById('favToggle').classList.toggle('active');
-  aplicarFiltros();
-}
-
-document.querySelectorAll('.script-card').forEach(function(card){
-  var id = card.dataset.scriptId;
-  if(!id) return;
-  var favBtn = document.createElement('button');
-  favBtn.className = 'fav-btn';
-  favBtn.innerHTML = isFavorito(id) ? '⭐' : '🤍';
-  if(isFavorito(id)) favBtn.classList.add('active');
-  favBtn.onclick = function(e){ e.stopPropagation(); toggleFavorito(id, favBtn); };
-  card.appendChild(favBtn);
-
-  var dateStr = card.dataset.date;
-  if(dateStr){
-    var dias = (new Date() - new Date(dateStr)) / (1000 * 60 * 60 * 24);
-    if(dias <= 30 && dias >= 0){
-      var badge = document.createElement('div');
-      badge.className = 'badge-new';
-      badge.textContent = '🆕 NOVO';
-      card.appendChild(badge);
-    }
-  }
-});
+function getFavoritos(){try{return JSON.parse(localStorage.getItem('kr-favs')||'[]')}catch(e){return[]}}
+function saveFavoritos(f){localStorage.setItem('kr-favs',JSON.stringify(f))}
+function isFavorito(id){return getFavoritos().indexOf(id)>-1}
+function toggleFavorito(id,btn){var favs=getFavoritos();var idx=favs.indexOf(id);if(idx>-1){favs.splice(idx,1);btn.classList.remove('active');btn.innerHTML='🤍';mostrarToast('💔 Removido dos favoritos')}else{favs.push(id);btn.classList.add('active');btn.innerHTML='⭐';mostrarToast('⭐ Adicionado aos favoritos!')}saveFavoritos(favs);atualizarContadorFavs();aplicarFiltros()}
+function atualizarContadorFavs(){document.getElementById('favCount').textContent=getFavoritos().length}
+function toggleFavFilter(){document.body.classList.toggle('show-favs');document.getElementById('favToggle').classList.toggle('active');aplicarFiltros()}
+document.querySelectorAll('.script-card').forEach(function(card){var id=card.dataset.scriptId;if(!id)return;var favBtn=document.createElement('button');favBtn.className='fav-btn';favBtn.innerHTML=isFavorito(id)?'⭐':'🤍';if(isFavorito(id))favBtn.classList.add('active');favBtn.onclick=function(e){e.stopPropagation();toggleFavorito(id,favBtn)};card.appendChild(favBtn);var dateStr=card.dataset.date;if(dateStr){var dias=(new Date()-new Date(dateStr))/(1000*60*60*24);if(dias<=30&&dias>=0){var badge=document.createElement('div');badge.className='badge-new';badge.textContent='🆕 NOVO';card.appendChild(badge)}}});
 atualizarContadorFavs();
 
-var CATEGORIAS = { todos:{label:'📦 Todos'}, mm2:{label:'🔪 MM2'}, tcs:{label:'⚽ TCS'}, fps:{label:'🔫 FPS'} };
-var categoriaAtual = 'todos';
-
-function montarFiltros(){
-  var container = document.getElementById('filters');
-  container.innerHTML = '';
-  Object.keys(CATEGORIAS).forEach(function(cat){
-    var count = cat === 'todos' ? document.querySelectorAll('.script-card').length : document.querySelectorAll('.script-card[data-categoria="'+cat+'"]').length;
-    if(count === 0 && cat !== 'todos') return;
-    var btn = document.createElement('button');
-    btn.className = 'filter-btn' + (cat === categoriaAtual ? ' active' : '');
-    btn.innerHTML = CATEGORIAS[cat].label + ' <span class="filter-count">' + count + '</span>';
-    btn.onclick = function(){
-      categoriaAtual = cat;
-      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      aplicarFiltros();
-    };
-    container.appendChild(btn);
-  });
-}
+var CATEGORIAS={todos:{label:'📦 Todos'},mm2:{label:'🔪 MM2'},tcs:{label:'⚽ TCS'},fps:{label:'🔫 FPS'}};
+var categoriaAtual='todos';
+function montarFiltros(){var container=document.getElementById('filters');container.innerHTML='';Object.keys(CATEGORIAS).forEach(function(cat){var count=cat==='todos'?document.querySelectorAll('.script-card').length:document.querySelectorAll('.script-card[data-categoria="'+cat+'"]').length;if(count===0&&cat!=='todos')return;var btn=document.createElement('button');btn.className='filter-btn'+(cat===categoriaAtual?' active':'');btn.innerHTML=CATEGORIAS[cat].label+' <span class="filter-count">'+count+'</span>';btn.onclick=function(){categoriaAtual=cat;document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');aplicarFiltros()};container.appendChild(btn)})}
 montarFiltros();
 
-function aplicarFiltros(){
-  var termo = document.getElementById('searchInput').value.toLowerCase().trim();
-  var cards = document.querySelectorAll('.script-card');
-  var visiveis = 0;
-  var mostrarSoFavs = document.body.classList.contains('show-favs');
-  document.getElementById('searchClear').classList.toggle('visible', termo.length > 0);
+function aplicarFiltros(){var termo=document.getElementById('searchInput').value.toLowerCase().trim();var cards=document.querySelectorAll('.script-card');var visiveis=0;var mostrarSoFavs=document.body.classList.contains('show-favs');document.getElementById('searchClear').classList.toggle('visible',termo.length>0);cards.forEach(function(card){var nome=card.querySelector('.script-name').textContent.toLowerCase();var desc=card.querySelector('.script-desc').textContent.toLowerCase();var tags=(card.dataset.tags||'').toLowerCase();var cat=card.dataset.categoria||'';var id=card.dataset.scriptId;var matchTexto=termo===''||nome.includes(termo)||desc.includes(termo)||tags.includes(termo);var matchCat=categoriaAtual==='todos'||cat===categoriaAtual;var matchFav=!mostrarSoFavs||isFavorito(id);if(matchTexto&&matchCat&&matchFav){card.classList.remove('hidden');visiveis++}else card.classList.add('hidden')});var noResults=document.getElementById('noResults');var info=document.getElementById('searchInfo');if(visiveis===0){noResults.classList.add('visible');info.textContent=''}else{noResults.classList.remove('visible');info.textContent=visiveis+' script'+(visiveis!==1?'s':'')+' encontrado'+(visiveis!==1?'s':'')}}
+function limparBusca(){document.getElementById('searchInput').value='';aplicarFiltros();document.getElementById('searchInput').focus()}
 
-  cards.forEach(function(card){
-    var nome = card.querySelector('.script-name').textContent.toLowerCase();
-    var desc = card.querySelector('.script-desc').textContent.toLowerCase();
-    var tags = (card.dataset.tags || '').toLowerCase();
-    var cat = card.dataset.categoria || '';
-    var id = card.dataset.scriptId;
-    var matchTexto = termo === '' || nome.includes(termo) || desc.includes(termo) || tags.includes(termo);
-    var matchCat = categoriaAtual === 'todos' || cat === categoriaAtual;
-    var matchFav = !mostrarSoFavs || isFavorito(id);
-    if(matchTexto && matchCat && matchFav){ card.classList.remove('hidden'); visiveis++; }
-    else card.classList.add('hidden');
-  });
-
-  var noResults = document.getElementById('noResults');
-  var info = document.getElementById('searchInfo');
-  if(visiveis === 0){ noResults.classList.add('visible'); info.textContent = ''; }
-  else { noResults.classList.remove('visible'); info.textContent = visiveis + ' script' + (visiveis !== 1 ? 's' : '') + ' encontrado' + (visiveis !== 1 ? 's' : ''); }
-}
-
-function limparBusca(){
-  document.getElementById('searchInput').value = '';
-  aplicarFiltros();
-  document.getElementById('searchInput').focus();
-}
-
-function copiar(link, btn, scriptId){
-  if(link.includes('SEU_LINK_AQUI') || link.includes('COLA_O_LINK')){ mostrarToast('⚠️ Esse script ainda não tem link configurado!'); return; }
-  var loadstring = 'loadstring(game:HttpGet("' + link + '"))()';
-  navigator.clipboard.writeText(loadstring).then(function(){
-    if(scriptId) incrementarContador(scriptId);
-    if(btn){
-      var orig = btn.innerHTML;
-      btn.classList.add('copied');
-      btn.innerHTML = '✅ COPIADO!';
-      setTimeout(function(){ btn.classList.remove('copied'); btn.innerHTML = orig; }, 1800);
-    }
-    mostrarToast('✅ Loadstring copiado! Cola no Delta e executa.');
-  }).catch(function(){ prompt('Copie manualmente:', loadstring); });
-}
+function copiar(link,btn,scriptId){if(link.includes('SEU_LINK_AQUI')||link.includes('COLA_O_LINK')){mostrarToast('⚠️ Esse script ainda não tem link configurado!');return}var loadstring='loadstring(game:HttpGet("'+link+'"))()';navigator.clipboard.writeText(loadstring).then(function(){if(scriptId)incrementarContador(scriptId);if(btn){var orig=btn.innerHTML;btn.classList.add('copied');btn.innerHTML='✅ COPIADO!';setTimeout(function(){btn.classList.remove('copied');btn.innerHTML=orig},1800)}mostrarToast('✅ Loadstring copiado! Cola no Delta e executa.')}).catch(function(){prompt('Copie manualmente:',loadstring)})}
 
 var toastTimer;
-function mostrarToast(msg){
-  var toast = document.getElementById('toast');
-  toast.textContent = msg;
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2500);
-}
+function mostrarToast(msg){var toast=document.getElementById('toast');toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){toast.classList.remove('show')},2500)}
 
-if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){ console.log('✅ Service Worker registrado:', reg.scope); })
-      .catch(function(err){ console.log('❌ Erro no SW:', err); });
-  });
-}
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('service-worker.js').then(function(reg){console.log('✅ Service Worker registrado:',reg.scope)}).catch(function(err){console.log('❌ Erro no SW:',err)})})}
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;document.getElementById('installBtn').style.display='flex'});
+function instalarPWA(){if(!deferredPrompt){mostrarToast('💡 Use o menu do navegador → "Adicionar à tela inicial"');return}deferredPrompt.prompt();deferredPrompt.userChoice.then(function(choice){if(choice.outcome==='accepted')mostrarToast('✅ App instalado!');deferredPrompt=null;document.getElementById('installBtn').style.display='none'})}
+window.addEventListener('appinstalled',function(){document.getElementById('installBtn').style.display='none';mostrarToast('🎉 App instalado com sucesso!')});
+if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true){document.getElementById('installBtn').style.display='none'}
 
-var deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', function(e){
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById('installBtn').style.display = 'flex';
+// ============================================
+// ATALHO ADMIN (Ctrl + Shift + 9)
+// ============================================
+document.addEventListener('keydown', function(e){
+  if(e.ctrlKey && e.shiftKey && (e.key === '9' || e.code === 'Digit9' || e.keyCode === 57)){
+    e.preventDefault();
+    window.location.href = 'admin.html';
+  }
 });
-
-function instalarPWA(){
-  if(!deferredPrompt){ mostrarToast('💡 Use o menu do navegador → "Adicionar à tela inicial"'); return; }
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(function(choice){
-    if(choice.outcome === 'accepted') mostrarToast('✅ App instalado!');
-    deferredPrompt = null;
-    document.getElementById('installBtn').style.display = 'none';
-  });
-}
-
-window.addEventListener('appinstalled', function(){
-  document.getElementById('installBtn').style.display = 'none';
-  mostrarToast('🎉 App instalado com sucesso!');
-});
-
-if(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true){
-  document.getElementById('installBtn').style.display = 'none';
-}
 </script>
 </body>
 </html>
