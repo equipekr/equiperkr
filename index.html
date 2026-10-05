@@ -173,7 +173,7 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <h1>🔥 EQUIPE KR 🔥</h1>
 <p>Os melhores scripts de Roblox Mobile. Feitos com carinho pra você dominar os jogos!</p>
 <div class="stats">
-<div class="stat"><div class="stat-num" id="statScripts">8</div><div class="stat-label">Scripts</div></div>
+<div class="stat"><div class="stat-num" id="statScripts">7</div><div class="stat-label">Scripts</div></div>
 <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Grátis</div></div>
 <div class="stat"><div class="stat-num">⚡</div><div class="stat-label">Mobile</div></div>
 </div>
@@ -255,15 +255,6 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <button class="script-btn" onclick="copiar('https://pastebin.com/raw/T7WL8MwN', this, 'painel')">📥 COPIAR LOADSTRING</button>
 </div>
 
-<div class="script-card" data-script-id="hubv2" data-categoria="tcs" data-date="2025-02-01" data-tags="tcs futebol reach esfera auto touch cor bola fogo gramado anti lag">
-<span class="script-icon">🔥</span>
-<div class="script-name">KR HUB v2</div>
-<div class="copy-counter">👁️ <span class="count" data-count="hubv2">0</span> cópias</div>
-<div class="script-desc">Auto Follow, Reach com Esfera, Auto Touch, Cor da Bola, Fogo, Gramado e Anti-Lag.</div>
-<div class="script-tags"><span class="tag">TCS</span><span class="tag">Reach</span><span class="tag">Esfera</span></div>
-<button class="script-btn" onclick="copiar('https://pastefy.app/SEU_LINK_AQUI/raw', this, 'hubv2')">📥 COPIAR LOADSTRING</button>
-</div>
-
 <div class="script-card" data-script-id="kxz" data-categoria="tcs" data-date="2026-10-04" data-tags="kxz tcs futebol skybox gramado bola seguir auto follow rgb fire graficos reach">
 <span class="script-icon">🌌</span>
 <div class="script-name">KXZ HUB 🌌</div>
@@ -302,9 +293,9 @@ footer a{color:var(--discord);text-decoration:none;font-weight:bold}
 <div class="container" id="vip">
 <div class="vip-cta">
 <h3>💎 KR HUB MASTER VIP</h3>
-<p>8 scripts em 1 painel + suporte prioritário!</p>
+<p>7 scripts em 1 painel + suporte prioritário!</p>
 <div class="vip-features">
-<span class="vip-feature">✅ 8 em 1</span>
+<span class="vip-feature">✅ 7 em 1</span>
 <span class="vip-feature">✅ Vitalício</span>
 <span class="vip-feature">✅ Suporte VIP</span>
 </div>
@@ -338,18 +329,14 @@ function setTheme(theme,btn){Object.values(THEMES).forEach(function(t){if(t.clas
 function toggleThemeMenu(e){e.stopPropagation();document.getElementById('themeMenu').classList.toggle('open')}
 document.addEventListener('click',function(e){var menu=document.getElementById('themeMenu');if(menu&&!menu.contains(e.target)&&!e.target.closest('.theme-toggle'))menu.classList.remove('open')});
 (function(){var saved=localStorage.getItem('kr-theme')||'dark';if(THEMES[saved])setTheme(saved)})();
-
 function getCounters(){try{return JSON.parse(localStorage.getItem('kr-counters')||'{}')}catch(e){return{}}}
 function saveCounters(c){localStorage.setItem('kr-counters',JSON.stringify(c))}
 function updateCounterUI(id){var c=getCounters();document.querySelectorAll('[data-count="'+id+'"]').forEach(function(el){el.textContent=c[id]||0})}
 function incrementarContador(id){var c=getCounters();c[id]=(c[id]||0)+1;saveCounters(c);updateCounterUI(id)}
 document.querySelectorAll('.script-card').forEach(function(card){var id=card.dataset.scriptId;if(id)updateCounterUI(id)});
-
-// CONTADOR AUTOMÁTICO
 var totalScripts=document.querySelectorAll('.script-card').length;
 var statScriptsEl=document.getElementById('statScripts');
 if(statScriptsEl)statScriptsEl.textContent=totalScripts;
-
 function getFavoritos(){try{return JSON.parse(localStorage.getItem('kr-favs')||'[]')}catch(e){return[]}}
 function saveFavoritos(f){localStorage.setItem('kr-favs',JSON.stringify(f))}
 function isFavorito(id){return getFavoritos().indexOf(id)>-1}
@@ -358,30 +345,21 @@ function atualizarContadorFavs(){document.getElementById('favCount').textContent
 function toggleFavFilter(){document.body.classList.toggle('show-favs');document.getElementById('favToggle').classList.toggle('active');aplicarFiltros()}
 document.querySelectorAll('.script-card').forEach(function(card){var id=card.dataset.scriptId;if(!id)return;var favBtn=document.createElement('button');favBtn.className='fav-btn';favBtn.innerHTML=isFavorito(id)?'⭐':'🤍';if(isFavorito(id))favBtn.classList.add('active');favBtn.onclick=function(e){e.stopPropagation();toggleFavorito(id,favBtn)};card.appendChild(favBtn);var dateStr=card.dataset.date;if(dateStr){var dias=(new Date()-new Date(dateStr))/(1000*60*60*24);if(dias<=30&&dias>=0){var badge=document.createElement('div');badge.className='badge-new';badge.textContent='🆕 NOVO';card.appendChild(badge)}}});
 atualizarContadorFavs();
-
 var CATEGORIAS={todos:{label:'📦 Todos'},mm2:{label:'🔪 MM2'},tcs:{label:'⚽ TCS'},fps:{label:'🔫 FPS'}};
 var categoriaAtual='todos';
 function montarFiltros(){var container=document.getElementById('filters');container.innerHTML='';Object.keys(CATEGORIAS).forEach(function(cat){var count=cat==='todos'?document.querySelectorAll('.script-card').length:document.querySelectorAll('.script-card[data-categoria="'+cat+'"]').length;if(count===0&&cat!=='todos')return;var btn=document.createElement('button');btn.className='filter-btn'+(cat===categoriaAtual?' active':'');btn.innerHTML=CATEGORIAS[cat].label+' <span class="filter-count">'+count+'</span>';btn.onclick=function(){categoriaAtual=cat;document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');aplicarFiltros()};container.appendChild(btn)})}
 montarFiltros();
-
 function aplicarFiltros(){var termo=document.getElementById('searchInput').value.toLowerCase().trim();var cards=document.querySelectorAll('.script-card');var visiveis=0;var mostrarSoFavs=document.body.classList.contains('show-favs');document.getElementById('searchClear').classList.toggle('visible',termo.length>0);cards.forEach(function(card){var nome=card.querySelector('.script-name').textContent.toLowerCase();var desc=card.querySelector('.script-desc').textContent.toLowerCase();var tags=(card.dataset.tags||'').toLowerCase();var cat=card.dataset.categoria||'';var id=card.dataset.scriptId;var matchTexto=termo===''||nome.includes(termo)||desc.includes(termo)||tags.includes(termo);var matchCat=categoriaAtual==='todos'||cat===categoriaAtual;var matchFav=!mostrarSoFavs||isFavorito(id);if(matchTexto&&matchCat&&matchFav){card.classList.remove('hidden');visiveis++}else card.classList.add('hidden')});var noResults=document.getElementById('noResults');var info=document.getElementById('searchInfo');if(visiveis===0){noResults.classList.add('visible');info.textContent=''}else{noResults.classList.remove('visible');info.textContent=visiveis+' script'+(visiveis!==1?'s':'')+' encontrado'+(visiveis!==1?'s':'')}}
 function limparBusca(){document.getElementById('searchInput').value='';aplicarFiltros();document.getElementById('searchInput').focus()}
-
 function copiar(link,btn,scriptId){if(link.includes('SEU_LINK_AQUI')||link.includes('COLA_O_LINK')){mostrarToast('⚠️ Esse script ainda não tem link configurado!');return}var loadstring='loadstring(game:HttpGet("'+link+'"))()';navigator.clipboard.writeText(loadstring).then(function(){if(scriptId)incrementarContador(scriptId);if(btn){var orig=btn.innerHTML;btn.classList.add('copied');btn.innerHTML='✅ COPIADO!';setTimeout(function(){btn.classList.remove('copied');btn.innerHTML=orig},1800)}mostrarToast('✅ Loadstring copiado! Cola no Delta e executa.')}).catch(function(){prompt('Copie manualmente:',loadstring)})}
-
 var toastTimer;
 function mostrarToast(msg){var toast=document.getElementById('toast');toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){toast.classList.remove('show')},2500)}
-
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('service-worker.js').then(function(reg){console.log('✅ Service Worker registrado:',reg.scope)}).catch(function(err){console.log('❌ Erro no SW:',err)})})}
 var deferredPrompt=null;
 window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;document.getElementById('installBtn').style.display='flex'});
 function instalarPWA(){if(!deferredPrompt){mostrarToast('💡 Use o menu do navegador → "Adicionar à tela inicial"');return}deferredPrompt.prompt();deferredPrompt.userChoice.then(function(choice){if(choice.outcome==='accepted')mostrarToast('✅ App instalado!');deferredPrompt=null;document.getElementById('installBtn').style.display='none'})}
 window.addEventListener('appinstalled',function(){document.getElementById('installBtn').style.display='none';mostrarToast('🎉 App instalado com sucesso!')});
 if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true){document.getElementById('installBtn').style.display='none'}
-
-// ============================================
-// ATALHO ADMIN (Ctrl + Shift + 9)
-// ============================================
 document.addEventListener('keydown', function(e){
   if(e.ctrlKey && e.shiftKey && (e.key === '9' || e.code === 'Digit9' || e.keyCode === 57)){
     e.preventDefault();
